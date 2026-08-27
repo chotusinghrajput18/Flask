@@ -9,6 +9,10 @@ def ask():
 def main(name):
     return f"Your name is {name}"
 
+@my.route("/aum/<int:a>/<int:b>")
+def add(a,b):
+    return f"Sum : {a+b}"
+
 @my.route("/new/<str:new>")
 def display(new):
     return redirect(url_for("main",name=new))
