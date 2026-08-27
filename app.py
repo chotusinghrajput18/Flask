@@ -29,5 +29,9 @@ def display(na):
 def fun():
     return render_template("index.html")
 
+@d.route("/mm/<int:a>/<int:b>")
+def sub(a,b):
+    return f"Difference : {a-b}"
+
 if __name__=="__main__":
     d.run(debug=True)
