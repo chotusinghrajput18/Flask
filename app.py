@@ -29,7 +29,12 @@ def display(na):
 def fun():
     return render_template("index.html")
 
-@d.route("/mm/<int:a>/<int:b>")
+@d.route("/sub/<int:a>/<int:b>")
+def sub(a,b):
+    return f"Difference : {a*b}"
+
+
+@d.route("/mul/<int:a>/<int:b>")
 def sub(a,b):
     return f"Difference : {a-b}"
 
