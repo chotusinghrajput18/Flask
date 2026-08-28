@@ -17,5 +17,9 @@ def add(a,b):
 def display(new):
     return redirect(url_for("main",name=new))
 
+@my.route("/home")
+def home():
+    return redirect(url_for("ask"))
+
 if __name__=="__main__":
     my.run(debug=True)
