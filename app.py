@@ -24,19 +24,17 @@ def display(na):
     else:
         return redirect(url_for('mobile',mob=na))
         
-
 @d.route("/myfunc")
 def fun():
     return render_template("index.html")
 
 @d.route("/sub/<int:a>/<int:b>")
 def sub(a,b):
-    return f"Difference : {a*b}"
-
+    return f"Difference : {a-b}"
 
 @d.route("/mul/<int:a>/<int:b>")
-def sub(a,b):
-    return f"Difference : {a-b}"
+def mul(a,b):
+    return f"Product : {a*b}"
 
 if __name__=="__main__":
     d.run(debug=True)
