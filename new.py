@@ -37,5 +37,13 @@ def help():
 def services():
     return redirect(url_for("ask"))
 
+@my.route("/products/<item>")
+def products(item):
+    return redirect(url_for("main",name=item))
+
+@my.route("/services/<service>")
+def service(service):
+    return redirect(url_for("main",name=service))
+
 if __name__=="__main__":
     my.run(debug=True)
