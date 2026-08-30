@@ -25,5 +25,17 @@ def home():
 def about():
     return redirect(url_for("ask"))
 
+@my.route("/contact")
+def contact():
+    return redirect(url_for("ask"))
+
+@my.route("/help")
+def help():
+    return redirect(url_for("ask"))
+
+@my.route("/services")
+def services():
+    return redirect(url_for("ask"))
+
 if __name__=="__main__":
     my.run(debug=True)
