@@ -21,5 +21,9 @@ def display(new):
 def home():
     return redirect(url_for("ask"))
 
+@my.route("/about")
+def about():
+    return redirect(url_for("ask"))
+
 if __name__=="__main__":
     my.run(debug=True)
