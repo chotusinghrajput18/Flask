@@ -56,5 +56,16 @@ def div(x, y):
 def sub(x, y):
     return f"Result: {x - y}"
 
+@my.route("/mul/<int:x>/<int:y>")
+def mul(x, y):
+    return f"Result: {x * y}"
+
+@my.route("/mod/<int:x>/<int:y>")
+def mod(x, y):  
+    if y != 0:
+        return f"Result: {x % y}"
+    else:
+        return "Error: Modulus by zero is not allowed."
+
 if __name__=="__main__":
     my.run(debug=True)
