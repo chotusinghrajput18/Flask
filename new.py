@@ -52,7 +52,9 @@ def div(x, y):
     else:
         return "Error: Division by zero is not allowed."
 
-
+@my.route("/sub/<int:x>/<int:y>")
+def sub(x, y):
+    return f"Result: {x - y}"
 
 if __name__=="__main__":
     my.run(debug=True)
