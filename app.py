@@ -28,6 +28,12 @@ def display(na):
 def add(a,b):
     return f"Sum : {a+b}"
 
+@d.route("/div/<int:a>/<int:b>")
+def div(a,b):
+    if b != 0:
+        return f"Result: {a / b}"
+    else:
+        return "Error: Division by zero is not allowed."    
 @d.route("/myfunc")
 def fun():
     return render_template("index.html")
