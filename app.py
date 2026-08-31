@@ -23,7 +23,11 @@ def display(na):
         return redirect(url_for('fname',name=na))
     else:
         return redirect(url_for('mobile',mob=na))
-        
+
+@d.route("/add/<int:a>/<int:b>")
+def add(a,b):
+    return f"Sum : {a+b}"
+
 @d.route("/myfunc")
 def fun():
     return render_template("index.html")
