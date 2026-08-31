@@ -45,5 +45,14 @@ def products(item):
 def service(service):
     return redirect(url_for("main",name=service))
 
+@my.route("/div/<int:x>/<int:y>")
+def div(x, y):
+    if y != 0:
+        return f"Result: {x / y}"
+    else:
+        return "Error: Division by zero is not allowed."
+
+
+
 if __name__=="__main__":
     my.run(debug=True)
