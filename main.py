@@ -5,5 +5,9 @@ app = Flask(__name__)
 def mul(x, y):
     return f"Result: {x * y}"
 
+@app.route("/myfunc")
+def fun():
+    return render_template("index.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
