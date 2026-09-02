@@ -67,5 +67,9 @@ def mod(x, y):
     else:
         return "Error: Modulus by zero is not allowed."
 
+@my.route("/pow/<int:x>/<int:y>", methods=["GET"])
+def power(x, y):
+    return f"Result: {x ** y}"
+
 if __name__=="__main__":
     my.run(debug=True)
