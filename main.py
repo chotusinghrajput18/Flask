@@ -9,5 +9,13 @@ def mul(x, y):
 def fun():
     return render_template("index.html")
 
+@app.route("/redirect")
+def redirect_to_mul():
+    return redirect(url_for("mul", x=5, y=10))
+
+@app.route("/redirect2/<int:x>/<int:y>", methods=["GET"])
+def redirect_to_mul_with_params(x, y):
+    return redirect(url_for("mul", x=x, y=y))
+
 if __name__ == "__main__":
     app.run(debug=True)
