@@ -46,5 +46,16 @@ def sub(a,b):
 def mul(a,b):
     return f"Product : {a*b}"
 
+@d.route("/mod/<int:a>/<int:b>")
+def mod(a,b):
+    if b != 0:
+        return f"Result: {a % b}"
+    else:
+        return "Error: Modulus by zero is not allowed."
+
+@d.route("/pow/<int:a>/<int:b>")
+def power(a,b):
+    return f"Result: {a ** b}"
+
 if __name__=="__main__":
     d.run(debug=True)
