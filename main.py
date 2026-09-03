@@ -17,5 +17,9 @@ def redirect_to_mul():
 def redirect_to_mul_with_params(x, y):
     return redirect(url_for("mul", x=x, y=y))
 
+@app.route("/add/<int:x>/<int:y>")
+def add(x, y):
+    return f"Result: {x + y}"
+
 if __name__ == "__main__":
     app.run(debug=True)
