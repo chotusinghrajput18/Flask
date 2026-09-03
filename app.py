@@ -57,5 +57,12 @@ def mod(a,b):
 def power(a,b):
     return f"Result: {a ** b}"
 
+@d.route("/floor/<int:a>/<int:b>")
+def floor_div(a,b):
+    if b != 0:
+        return f"Result: {a // b}"
+    else:
+        return "Error: Floor division by zero is not allowed."
+
 if __name__=="__main__":
     d.run(debug=True)
