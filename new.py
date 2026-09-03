@@ -71,5 +71,12 @@ def mod(x, y):
 def power(x, y):
     return f"Result: {x ** y}"
 
+@my.route("/floor/<int:x>/<int:y>")
+def floor_div(x, y):
+    if y != 0:
+        return f"Result: {x // y}"
+    else:
+        return "Error: Floor division by zero is not allowed."
+
 if __name__=="__main__":
     my.run(debug=True)
