@@ -41,6 +41,11 @@ def services():
 def products(item):
     return redirect(url_for("main",name=item))
 
+@my.route("/products/<item>/<int:quantity>")
+def products_quantity(item, quantity):
+    return redirect(url_for("main", name=f"{item} (Quantity: {quantity})"))
+
+
 @my.route("/services/<service>")
 def service(service):
     return redirect(url_for("main",name=service))
