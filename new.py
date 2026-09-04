@@ -53,6 +53,10 @@ def services_level(service, level):
 def service(service):
     return redirect(url_for("main",name=service))
 
+@my.route("/add/<int:x>/<int:y>")
+def add_numbers(x, y):
+    return f"Result: {x + y}"
+
 @my.route("/div/<int:x>/<int:y>")
 def div(x, y):
     if y != 0:
