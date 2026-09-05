@@ -21,8 +21,14 @@ class Student:
 
     def set_grade(self, grade):
         self.grade = grade
-        
+
 s1=Student("Alice", 20, "A")
 print(s1.get_name())  # Output: Alice
 print(s1.get_age())   # Output: 20
 print(s1.get_grade()) # Output: A
+print("Before update:", s1.get_name(), s1.get_age(), s1.get_grade())
+s1.set_name("Bob")
+s1.set_age(22)
+s1.set_grade("B")
+print("After update:", s1.get_name(), s1.get_age(), s1.get_grade())
+print("Before update:", s1.get_name(), s1.get_age(), s1.get_grade())
