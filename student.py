@@ -21,3 +21,8 @@ class Student:
 
     def set_grade(self, grade):
         self.grade = grade
+        
+s1=Student("Alice", 20, "A")
+print(s1.get_name())  # Output: Alice
+print(s1.get_age())   # Output: 20
+print(s1.get_grade()) # Output: A
