@@ -17,3 +17,6 @@ class Calculator:
         return a / b
 c1=Calculator()
 print(c1.add(2,3,4,6,0,7,))
+print(c1.subtract(10, 5))
+print(c1.multiply(2,3,5,6,7,8,9))
+print(c1.divide(100,9))
