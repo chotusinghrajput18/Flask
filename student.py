@@ -1,34 +1,41 @@
 class Student:
-    def __init__(self, name, age, grade):
-        self.name = name
-        self.age = age
-        self.grade = grade
+    student ={
+        "id": [101, 102, 103, 104, 105, 106, 107, 108],
+        "name": ['Sahil','Rohit','Rahul','Rajeev','Ramesh','Rakesh','Ravi','Rohit'],
+        "age": [20, 22, 21, 23, 20, 22, 21, 23],
+        "grade": ['A', 'B', 'A', 'B', 'A', 'B', 'A', 'B']
+    }
+    def __init__(self,id):
+        self.id = id
+        self.name = self.student["name"][id]
+        self.age = self.student["age"][id]
+        self.grade = self.student["grade"][id]
 
-    def get_name(self):
-        return self.name
+    def get_name(self, id):
+        return self.student["name"][id]
 
-    def get_age(self):
-        return self.age
+    def get_age(self, id):
+        return self.student["age"][id]
 
-    def get_grade(self):
-        return self.grade
+    def get_grade(self, id):
+        return self.student["grade"][id]
 
-    def set_name(self, name):
-        self.name = name
+    def set_name(self, name, id):
+        self.student["name"][id] = name
 
-    def set_age(self, age):
-        self.age = age
+    def set_age(self, age, id):
+        self.student["age"][id] = age
 
-    def set_grade(self, grade):
-        self.grade = grade
+    def set_grade(self, grade, id):
+        self.student["grade"][id] = grade
 
-s1=Student("Alice", 20, "A")
-print(s1.get_name())  # Output: Alice
-print(s1.get_age())   # Output: 20
-print(s1.get_grade()) # Output: A
-print("Before update:", s1.get_name(), s1.get_age(), s1.get_grade())
-s1.set_name("Bob")
-s1.set_age(22)
-s1.set_grade("B")
-print("After update:", s1.get_name(), s1.get_age(), s1.get_grade())
-print("Before update:", s1.get_name(), s1.get_age(), s1.get_grade())
+s1=Student(0)
+print(s1.get_name(0))  # Output: Sahil
+print(s1.get_age(0))   # Output: 20
+print(s1.get_grade(0)) # Output: A
+print("Before update:", s1.get_name(0), s1.get_age(0), s1.get_grade(0))
+s1.set_name("Bob", 0)
+s1.set_age(22, 0)
+s1.set_grade("B", 0)
+print("After update:", s1.get_name(0), s1.get_age(0), s1.get_grade(0))
+print("Before update:", s1.get_name(0), s1.get_age(0), s1.get_grade(0))
