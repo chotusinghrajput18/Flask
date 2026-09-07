@@ -1,15 +1,15 @@
 from flask import Flask, render_template, url_for, redirect
 app = Flask(__name__)
 
-@app.route("/mul/<int:x>/<int:y>")
+@app.route("/mul/<int:x>/<int:y>",methods=["GET"])
 def mul(x, y):
     return f"Result: {x * y}"
 
-@app.route("/myfunc")
+@app.route("/myfunc",methods=["GET"])
 def fun():
     return render_template("index.html")
 
-@app.route("/redirect")
+@app.route("/redirect", methods=["GET"])
 def redirect_to_mul():
     return redirect(url_for("mul", x=5, y=10))
 
@@ -17,7 +17,7 @@ def redirect_to_mul():
 def redirect_to_mul_with_params(x, y):
     return redirect(url_for("mul", x=x, y=y))
 
-@app.route("/add/<int:x>/<int:y>")
+@app.route("/add/<int:x>/<int:y>", methods=["GET"])
 def add(x, y):
     return f"Result: {x + y}"
 
