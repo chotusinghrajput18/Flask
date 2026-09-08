@@ -21,5 +21,9 @@ def redirect_to_mul_with_params(x, y):
 def add(x, y):
     return f"Result: {x + y}"
 
+@app.route("/sub/<int:x>/<int:y>", methods=["GET"])
+def sub(x, y):
+    return f"Result: {x - y}"
+
 if __name__ == "__main__":
     app.run(debug=True)
