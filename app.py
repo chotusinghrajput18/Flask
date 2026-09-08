@@ -64,9 +64,13 @@ def floor_div(a,b):
     else:
         return "Error: Floor division by zero is not allowed."
 
-@d.route("/home")
+@d.route("/home",methods=["GET","POST"])
 def home_page():
     return render_template("index.html")
+
+@d.route("/redirect", methods=["GET"])
+def redirect_to_mul():
+    return redirect(url_for("mul", a=5, b=10))
 
 if __name__=="__main__":
     d.run(debug=True)
