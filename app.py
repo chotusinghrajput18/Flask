@@ -64,5 +64,9 @@ def floor_div(a,b):
     else:
         return "Error: Floor division by zero is not allowed."
 
+@d.route("/home")
+def home_page():
+    return render_template("index.html")
+
 if __name__=="__main__":
     d.run(debug=True)
