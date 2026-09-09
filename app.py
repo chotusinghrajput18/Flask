@@ -3,7 +3,7 @@ d=Flask(__name__)
 
 @d.route("/hello",methods=["GET"])
 def hello():
-    return "Hello World\nHello World\nHello World\nHello World\nHello World\nHello World" 
+    return "Hello World\nHello World" 
 
 @d.route("/python/<name>", methods=["GET"])
 def fname(name):
