@@ -17,6 +17,10 @@ def mobile(mob):
         return f"Your phone No: {mob}"
     return "Nothing to show"
 
+@d.route('/',methods=['GET','POST'])
+def index():
+    return render_template("index.html")
+
 @d.route("/myproject/<na>", methods=["GET"])
 def display(na):
     if na=="chotu":
