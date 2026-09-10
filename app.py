@@ -28,6 +28,11 @@ def display(na):
     else:
         return redirect(url_for('mobile',mob=na))
 
+@d.route("/redirect2/<int:a>/<int:b>", methods=["GET"])
+def redirect_to_mul_with_params(a, b):
+    return redirect(url_for("mul", a=a, b=b))
+
+
 @d.route("/add/<int:a>/<int:b>", methods=["GET"])
 def add(a,b):
     return f"Sum : {a+b}"
