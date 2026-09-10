@@ -25,5 +25,9 @@ def add(x, y):
 def sub(x, y):
     return f"Result: {x - y}"
 
+@app.route('/<int:a>/<int:b>')
+def sum(a,b):
+    return a+b
+
 if __name__ == "__main__":
     app.run(debug=True)
