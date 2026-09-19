@@ -5,29 +5,5 @@ app = Flask(__name__)
 def mul(x, y):
     return f"Result: {x * y}"
 
-@app.route("/myfunc",methods=["GET"])
-def fun():
-    return render_template("index.html")
-
-@app.route("/redirect", methods=["GET"])
-def redirect_to_mul():
-    return redirect(url_for("mul", x=5, y=10))
-
-@app.route("/redirect2/<int:x>/<int:y>", methods=["GET"])
-def redirect_to_mul_with_params(x, y):
-    return redirect(url_for("mul", x=x, y=y))
-
-@app.route("/add/<int:x>/<int:y>", methods=["GET"])
-def add(x, y):
-    return f"Result: {x + y}"
-
-@app.route("/sub/<int:x>/<int:y>", methods=["GET"])
-def sub(x, y):
-    return f"Result: {x - y}"
-
-@app.route('/<int:a>/<int:b>')
-def sum(a,b):
-    return a+b
-
 if __name__ == "__main__":
     app.run(debug=True)
