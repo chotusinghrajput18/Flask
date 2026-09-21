@@ -1,6 +1,16 @@
 from flask import Flask, render_template, url_for, redirect
 my=Flask(__name__)
 
+data={
+    'name':["sahil","Abhishek","Prince","Aditya"],
+    'sid':[20251,20252,20253,20254],
+    'marks':[[78,98,92,56,78],
+             [56,76,78,76,78],
+             [78,76,56,45,76],
+             [76,56,54,56,44]]
+
+}
+
 @my.route("/")
 def ask():
     return render_template("ask.html")
@@ -71,6 +81,13 @@ def sub(x, y):
 @my.route("/mul/<int:x>/<int:y>")
 def mul(x, y):
     return f"Result: {x * y}"
+
+@my.route("/detail/<str:name>/<str:sid>",methods=["GET","POST"])
+def info(name,sid):
+    n=data["name"]
+    s=data["sid"]
+    if name==data["name"] and sid==data["sid"]:
+        pass
 
 @my.route("/mod/<int:x>/<int:y>")
 def mod(x, y):  
